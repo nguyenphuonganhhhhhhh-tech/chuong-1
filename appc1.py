@@ -4,7 +4,6 @@ import streamlit as st
 st.set_page_config(page_title="Ôn tập Nhiệt động học", page_icon="🌡️", layout="centered")
 
 # --- DỮ LIỆU BỘ CÂU HỎI ---
-# 100 câu hỏi trắc nghiệm
 quiz_data = [
     {"q": "Câu 1. Nhiệt động học là môn khoa học nghiên cứu về?", "ops": ["A. Sự biến đổi năng lượng", "B. Cấu trúc tế bào", "C. Di truyền học", "D. Quang hợp"], "ans": "A"},
     {"q": "Câu 2. Hệ không trao đổi vật chất và năng lượng với môi trường được gọi là?", "ops": ["A. Hệ mở", "B. Hệ kín", "C. Hệ cô lập", "D. Hệ dị thể"], "ans": "C"},
@@ -79,7 +78,7 @@ quiz_data = [
     {"q": "Câu 71. Đại lượng nào sau đây KHÔNG phải là hàm trạng thái?", "ops": ["A. Nội năng U", "B. Entanpi H", "C. Nhiệt lượng Q", "D. Entropy S"], "ans": "C"},
     {"q": "Câu 72. Ý nghĩa của gradient nồng độ dC/dx trong tế bào sống là gì?", "ops": ["A. Không có ý nghĩa sinh học", "B. Sự tồn tại của gradient tạo ra khả năng thực hiện công của tế bào sống", "C. Chỉ có ý nghĩa vật lý, không liên quan sinh học", "D. Luôn bằng 0 trong tế bào sống"], "ans": "B"},
     {"q": "Câu 73. Sự khác biệt cơ bản giữa quá trình đẳng nhiệt và đoạn nhiệt là gì?", "ops": ["A. Đẳng nhiệt không trao đổi nhiệt còn đoạn nhiệt có trao đổi nhiệt", "B. Đẳng nhiệt giữ T không đổi (có thể trao đổi nhiệt khi V/P thay đổi), đoạn nhiệt không trao đổi nhiệt (T có thể thay đổi)", "C. Cả hai đều không trao đổi nhiệt", "D. Cả hai đều giữ nhiệt độ không đổi"], "ans": "B"},
-    {"q": "Câu 74. Vì sao trong quá trình đẳng nhiệt vẫn có thể xảy ra trao đổi nhiệt với môi trường?", "ops": ["A. Vì nhiệt độ không thực sự cố định", "B. Để bù lại sự thay đổi thể tích/áp suất mà vẫn giữ nhiệt độ không đổi", "C. Vì đẳng nhiệt luôn đi kèm với đoạn nhiệt", "D. Vì đó là do sai số đo lường"], "ans": "B"},
+    {"q": "Câu 74. Vì sao trong quá trình đẳng nhiệt vẫn có thể xảy ra trao đổi nhiệt với môi trường?", "ops": ["A. Vì nhiệt độ không thực sự cố định", "B. Để bù lại sự thay đổi thể tích/áp suất mà vẫn giữ nhiệt độ không đổi", "C. Vì đẳng nhiệt luôn đi kèm with đoạn nhiệt", "D. Vì đó là do sai số đo lường"], "ans": "B"},
     {"q": "Câu 75. Bốn dạng công cơ bản trong cơ thể sống đều cần loại năng lượng chủ yếu nào để thực hiện?", "ops": ["A. Nhiệt năng", "B. ATP, GTP", "C. Quang năng", "D. Cơ năng từ bên ngoài"], "ans": "B"},
     {"q": "Câu 76. Một hệ kín nhận nhiệt lượng Q = 500 J và sinh công A = 200 J. Độ biến thiên nội năng ΔU của hệ là?", "ops": ["A. 300 J", "B. 700 J", "C. −300 J", "D. −700 J"], "ans": "A"},
     {"q": "Câu 77. Một động cơ nhiệt hoạt động giữa nguồn nóng T1 = 600 K và nguồn lạnh T2 = 300 K. Hiệu suất lý tưởng của động cơ là?", "ops": ["A. 25%", "B. 50%", "C. 75%", "D. 100%"], "ans": "B"},
@@ -102,17 +101,16 @@ quiz_data = [
     {"q": "Câu 94. Nếu T2 (nguồn lạnh) tiến gần đến T1 (nguồn nóng), hiệu suất động cơ nhiệt η sẽ tiến gần đến?", "ops": ["A. 1", "B. 0", "C. Vô cực", "D. Âm"], "ans": "B"},
     {"q": "Câu 95. Một phản ứng có ΔH = −20 kJ, ΔS = +50 J/K. Ở mọi nhiệt độ dương, dấu của ΔG sẽ?", "ops": ["A. Luôn dương (không tự diễn biến)", "B. Luôn âm (luôn tự diễn biến ở mọi T > 0)", "C. Luôn bằng 0", "D. Phụ thuộc hoàn toàn vào áp suất"], "ans": "B"},
     {"q": "Câu 96. Một phản ứng có ΔH > 0, ΔS < 0. Dấu của ΔG ở mọi nhiệt độ dương sẽ?", "ops": ["A. Luôn âm", "B. Luôn dương (không bao giờ tự diễn biến)", "C. Bằng 0", "D. Phụ thuộc vào áp suất"], "ans": "B"},
-    {"q": "Câu 97. Trong thí nghiệm bom nhiệt lượng, mẫu chất được đốt cháy trong điều kiện nào?", "ops": ["A. Hệ mở, áp suất khí quyển", "B. Hệ cô lập (kín, thể tích không đổi) để đo chính xác nhiệt tỏa ra", "C. Hệ có trao đổi vật chất tự do", "D. Điều kiện chân không tuyệt đối không có oxy"], "ans": "B"},
+    {"q": "TXT 97. Trong thí nghiệm bom nhiệt lượng, mẫu chất được đốt cháy trong điều kiện nào?", "ops": ["A. Hệ mở, áp suất khí quyển", "B. Hệ cô lập (kín, thể tích không đổi) để đo chính xác nhiệt tỏa ra", "C. Hệ có trao đổi vật chất tự do", "D. Điều kiện chân không tuyệt đối không có oxy"], "ans": "B"},
     {"q": "Câu 98. Tại sao phương pháp nhiệt lượng kế gián tiếp lại được gọi là \"gián tiếp\"?", "ops": ["A. Vì đo trực tiếp nhiệt lượng cơ thể tỏa ra bằng bom nhiệt lượng chứa cả cơ thể", "B. Vì suy ra nhiệt lượng cơ thể sinh ra thông qua nhiệt lượng đo được khi đốt cháy thức ăn (thành phần dinh dưỡng) trong bom nhiệt lượng, không đo trực tiếp trên cơ thể sống", "C. Vì không liên quan đến nhiệt lượng", "D. Vì đo qua nhiệt độ môi trường xung quanh"], "ans": "B"},
     {"q": "Câu 99. Nhận định nào sau đây về mối quan hệ giữa 3 nguyên lý nhiệt động học là đúng?", "ops": ["A. Nguyên lý 0 xác định chiều quá trình, nguyên lý 1 nói về cân bằng nhiệt, nguyên lý 2 bảo toàn năng lượng", "B. Nguyên lý 0 nói về cân bằng nhiệt, nguyên lý 1 là bảo toàn năng lượng, nguyên lý 2 xác định chiều hướng tự diễn biến", "C. Cả ba nguyên lý đều chỉ nói về entropy", "D. Cả ba nguyên lý đều tương đương nhau"], "ans": "B"},
     {"q": "Câu 100. Nhận định nào sau đây chính xác nhất khi so sánh vai trò của nguyên lý 1 và nguyên lý 2 trong nghiên cứu hệ sống?", "ops": ["A. Nguyên lý 1 cho biết năng lượng được bảo toàn/chuyển hóa (định lượng); nguyên lý 2 cho biết chiều hướng, khả năng và giới hạn tự diễn biến (định hướng); cả hai đều không cho biết cơ chế/bản chất chi tiết của quá trình", "B. Nguyên lý 1 và 2 hoàn toàn độc lập, không liên quan gì đến nhau trong hệ sống", "C. Nguyên lý 2 có thể thay thế hoàn toàn nguyên lý 1", "D. Chỉ nguyên lý 1 áp dụng được cho hệ sống, nguyên lý 2 không áp dụng được"], "ans": "A"}
 ]
 
-# 25 câu hỏi điền từ
 fill_data = [
     {"q": "1. ______ là khoa học nghiên cứu về sự biến đổi năng lượng.", "ans": "Nhiệt động học"},
     {"q": "2. Hệ không trao đổi vật chất và năng lượng với môi trường xung quanh được gọi là hệ ______.", "ans": "cô lập"},
-    {"q": "3. Hệ không trao đổi vật chất nhưng có trao đổi năng lượng với môi trường được gọi là hệ ______.", "ans": "kín"},
+    {"q": "3. Hệ không trao đổi vật chất nhưng có trao đổi năng lượng với môi trường được gọi là hệ ______.", "ans": "kín", "alt": ["hệ đóng", "đóng"]},
     {"q": "4. Hệ có trao đổi cả vật chất và năng lượng với môi trường được gọi là hệ ______.", "ans": "mở"},
     {"q": "5. Hệ không có bề mặt phân chia thành các phần có tính chất hóa lý khác nhau được gọi là hệ ______.", "ans": "đồng thể"},
     {"q": "6. Hệ gồm hai pha trở lên, ngăn cách nhau bởi bề mặt phân chia, được gọi là hệ ______.", "ans": "dị thể"},
@@ -120,9 +118,9 @@ fill_data = [
     {"q": "8. Theo nguyên lý số 1, nhiệt lượng Q mà hệ nhận được bằng công A mà hệ sinh ra cộng với sự biến đổi ______ của hệ.", "ans": "nội năng"},
     {"q": "9. Định luật ______ là hệ quả của nguyên lý số 1, cho biết hiệu ứng nhiệt chỉ phụ thuộc vào trạng thái đầu và cuối.", "ans": "Hexo"},
     {"q": "10. ______ là công cụ dùng để đo nhiệt lượng tỏa ra khi đốt cháy một mẫu chất trong điều kiện cô lập.", "ans": "Bom nhiệt lượng"},
-    {"q": "11. Nguyên lý số ______ phát biểu: nếu hai hệ cân bằng nhiệt với một hệ thứ ba thì chúng cân bằng nhiệt với nhau.", "ans": "0"},
+    {"q": "11. Nguyên lý số ______ phát biểu: nếu hai hệ cân bằng nhiệt với một hệ thứ ba thì chúng cân bằng nhiệt với nhau.", "ans": "0", "alt": ["không"]},
     {"q": "12. Đại lượng đặc trưng cho mức độ hỗn loạn hay sự phân tán năng lượng của hệ được gọi là ______.", "ans": "entropy"},
-    {"q": "13. Công thức S = k.lnω biểu diễn entropy theo định nghĩa ______ (mức độ hỗn loạn của hệ).", "ans": "thứ hai"},
+    {"q": "13. Công thức S = k.lnω biểu diễn entropy theo định nghĩa ______ (mức độ hỗn loạn của hệ).", "ans": "thứ hai", "alt": ["2", "thứ 2"]},
     {"q": "14. Trong công thức S = k.lnω, ω được gọi là ______.", "ans": "xác suất nhiệt động"},
     {"q": "15. ______ là năng lượng có thể biến thành công hoàn toàn sau khi trừ đi phần năng lượng mất mát để tăng entropy.", "ans": "Năng lượng tự do"},
     {"q": "16. Ở điều kiện T, V không đổi, năng lượng tự do được gọi là năng lượng tự do ______.", "ans": "Helmholtz"},
@@ -138,135 +136,122 @@ fill_data = [
 ]
 
 # --- GIAO DIỆN ỨNG DỤNG ---
-st.title("🧪 BÀI KIỂM TRA ÔN TẬP NHIỆT ĐỘNG HỌC")
+st.title("🧪 HỌC VÀ ÔN TẬP NHIỆT ĐỘNG HỌC")
+st.caption("Ứng dụng tự động kiểm tra và chấm điểm tức thì sau khi chọn đáp án.")
 st.markdown("---")
 
-# Menu điều hướng bên thanh sidebar
-menu = st.sidebar.radio("Chọn phần làm bài", ["Thông tin sinh viên", "Phần A: Trắc nghiệm (100 câu)", "Phần B: Điền từ (25 câu)", "Nộp bài & Kết quả"])
+menu = st.sidebar.radio("Menu Điều Hướng", ["Phần A: Trắc nghiệm (100 câu)", "Phần B: Điền từ (25 câu)", "Báo cáo Tổng kết"])
 
-# Khởi tạo session_state để lưu câu trả lời
+# Khởi tạo trạng thái bộ nhớ
 if 'answers_a' not in st.session_state:
     st.session_state.answers_a = [None] * len(quiz_data)
 if 'answers_b' not in st.session_state:
     st.session_state.answers_b = [""] * len(fill_data)
-if 'student_name' not in st.session_state:
-    st.session_state.student_name = ""
-if 'student_id' not in st.session_state:
-    st.session_state.student_id = ""
+if 'user_info' not in st.session_state:
+    st.session_state.user_info = {"name": "", "id": ""}
 
-# --- 1. THÔNG TIN SINH VIÊN ---
-if menu == "Thông tin sinh viên":
-    st.header("👤 Nhập thông tin học sinh")
-    st.session_state.student_name = st.text_input("Họ và tên:", st.session_state.student_name)
-    st.session_state.student_id = st.text_input("Mã số học sinh/sinh viên:", st.session_state.student_id)
-    
-    if st.session_state.student_name and st.session_state.student_id:
-        st.success("Thông tin hợp lệ! Vui lòng chọn Phần A hoặc Phần B ở thanh bên để bắt đầu làm bài.")
-    else:
-        st.warning("Vui lòng nhập đầy đủ thông tin trước khi làm bài.")
 
-# --- 2. PHẦN A: TRẮC NGHIỆM ---
+# --- 1. PHẦN A: TRẮC NGHIỆM TỰ ĐỘNG CHẤM TỨC THÌ ---
 elif menu == "Phần A: Trắc nghiệm (100 câu)":
-    st.header("📝 PHẦN A. CÂU HỎI TRẮC NGHIỆM")
-    st.caption("Chọn phương án đúng nhất cho mỗi câu hỏi bên dưới.")
+    st.header("📝 PHẦN A. TRẮC NGHIỆM CHẤM ĐIỂM NGAY")
     
-    # Tạo phân đoạn nhỏ (Mức độ câu hỏi) để tăng tính scannable
-    st.subheader("I. Mức độ Nhận biết (Câu 1 – 40)")
-    for i in range(0, 40):
-        q = quiz_data[i]
-        choice = st.radio(q["q"], q["ops"], index=st.session_state.answers_a[i] if st.session_state.answers_a[i] is not None else None, key=f"q_{i}", horizontal=True)
-        if choice:
-            st.session_state.answers_a[i] = q["ops"].index(choice)
-        st.write("")
+    # Định nghĩa hàm hiển thị câu hỏi trắc nghiệm kèm logic hiển thị kết quả trực quan
+    def show_quiz_range(start_idx, end_idx, title):
+        st.subheader(title)
+        for i in range(start_idx, end_idx):
+            q = quiz_data[i]
+            
+            # Đọc câu trả lời cũ của học sinh nếu có
+            current_saved_idx = st.session_state.answers_a[i]
+            
+            choice = st.radio(
+                q["q"], 
+                q["ops"], 
+                index=current_saved_idx, 
+                key=f"quiz_{i}", 
+                horizontal=True
+            )
+            
+            if choice is not None:
+                # Cập nhật kết quả lựa chọn vào bộ nhớ session
+                chosen_idx = q["ops"].index(choice)
+                st.session_state.answers_a[i] = chosen_idx
+                
+                # Logic chấm đáp án lấy chữ cái đầu (A, B, C, D)
+                student_letter = choice[0]
+                if student_letter == q["ans"]:
+                    st.success(f"✅ Đúng! Đáp án chính xác là **{q['ans']}**.")
+                else:
+                    st.error(f"❌ Sai rồi! Đáp án đúng phải là **{q['ans']}**.")
+            st.markdown("<div style='margin-bottom: 25px;'></div>", unsafe_allow_html=True)
 
-    st.subheader("II. Mức độ Thông hiểu (Câu 41 – 75)")
-    for i in range(40, 75):
-        q = quiz_data[i]
-        choice = st.radio(q["q"], q["ops"], index=st.session_state.answers_a[i] if st.session_state.answers_a[i] is not None else None, key=f"q_{i}", horizontal=True)
-        if choice:
-            st.session_state.answers_a[i] = q["ops"].index(choice)
-        st.write("")
+    show_quiz_range(0, 40, "I. Mức độ Nhận biết (Câu 1 – 40)")
+    show_quiz_range(40, 75, "II. Mức độ Thông hiểu (Câu 41 – 75)")
+    show_quiz_range(75, 100, "III. Mức độ Vận dụng / Vận dụng cao (Câu 76 – 100)")
 
-    st.subheader("III. Mức độ Vận dụng / Vận dụng cao (Câu 76 – 100)")
-    for i in range(75, 100):
-        q = quiz_data[i]
-        choice = st.radio(q["q"], q["ops"], index=st.session_state.answers_a[i] if st.session_state.answers_a[i] is not None else None, key=f"q_{i}", horizontal=True)
-        if choice:
-            st.session_state.answers_a[i] = q["ops"].index(choice)
-        st.write("")
-
-# --- 3. PHẦN B: ĐIỀN TỪ ---
+# --- 2. PHẦN B: ĐIỀN TỪ CHẤM TỨC THÌ KHI NHẤN ENTER ---
 elif menu == "Phần B: Điền từ (25 câu)":
     st.header("✏️ PHẦN B. ĐIỀN TỪ / CỤM TỪ")
-    st.caption("Điền từ hoặc cụm từ thích hợp vào chỗ trống (Ứng dụng không phân biệt chữ hoa, chữ thường).")
+    st.caption("Nhập từ/cụm từ vào ô trống và nhấn **Enter** để xem kết quả kiểm tra.")
     
     for i, f in enumerate(fill_data):
-        st.session_state.answers_b[i] = st.text_input(f["q"], value=st.session_state.answers_b[i], key=f"f_{i}").strip()
-
-# --- 4. NỘP BÀI & KẾT QUẢ ---
-elif menu == "Nộp bài & Kết quả":
-    st.header("📊 NỘP BÀI VÀ XEM KẾT QUẢ")
-    
-    if not st.session_state.student_name or not st.session_state.student_id:
-        st.error("❌ Bạn chưa nhập đầy đủ thông tin cá nhân. Hãy quay lại mục 'Thông tin sinh viên'.")
-    else:
-        st.write(f"**Học sinh:** {st.session_state.student_name} | **MSSV:** {st.session_state.student_id}")
+        # Đọc dữ liệu từ state
+        user_input = st.text_input(f["q"], value=st.session_state.answers_b[i], key=f"fill_{i}").strip()
+        st.session_state.answers_b[i] = user_input
         
-        # Đếm số câu hoàn thành
-        done_a = sum(1 for x in st.session_state.answers_a if x is not None)
-        done_b = sum(1 for x in st.session_state.answers_b if x != "")
-        
-        st.write(f"- Tiến độ Trắc nghiệm: **{done_a}/100** câu")
-        st.write(f"- Tiến độ Điền từ: **{done_b}/25** câu")
-        
-        if st.button("XÁC NHẬN NỘP BÀI", type="primary"):
-            score_a = 0
-            score_b = 0
+        if user_input != "":
+            student_ans = user_input.lower()
+            correct_ans = f["ans"].lower()
             
-            # Chấm phần trắc nghiệm
-            for i, q in enumerate(quiz_data):
-                ans_idx = st.session_state.answers_a[i]
-                if ans_idx is not None:
-                    selected_ans_letter = q["ops"][ans_idx][0]  # Lấy ký tự đầu A, B, C, D
-                    if selected_ans_letter == q["ans"]:
-                        score_a += 1
-            
-            # Chấm phần điền từ
-            for i, f in enumerate(fill_data):
-                student_ans = st.session_state.answers_b[i].strip().lower()
-                correct_ans = f["ans"].strip().lower()
-                
-                # Xử lý trường hợp có đáp án phụ (ví dụ: kín / hệ đóng)
-                if correct_ans == "kín (hệ đóng)":
-                    if student_ans in ["kín", "hệ kín", "đóng", "hệ đóng"]:
-                        score_b += 1
-                elif correct_ans == "0 (không)":
-                    if student_ans in ["0", "không"]:
-                        score_b += 1
-                elif correct_ans == "thứ hai (2)":
-                    if student_ans in ["hai", "2", "thứ hai", "thứ 2"]:
-                        score_b += 1
-                else:
-                    if student_ans == correct_ans:
-                        score_b += 1
-
-            total_correct = score_a + score_b
-            total_questions = len(quiz_data) + len(fill_data)
-            final_score_10 = (total_correct / total_questions) * 10
-            
-            st.markdown("---")
-            st.subheader("🎉 KẾT QUẢ BÀI LÀM")
-            
-            # Dùng cấu trúc cột hiển thị kết quả trực quan
-            col1, col2, col3 = st.columns(3)
-            col1.metric("Đúng Trắc nghiệm", f"{score_a}/100")
-            col2.metric("Đúng Điền từ", f"{score_b}/25")
-            col3.metric("Điểm Hệ 10", f"{final_score_10:.2f}")
-            
-            if final_score_10 >= 8.0:
-                st.balloons()
-                st.success("Xuất sắc! Bạn nắm vững kiến thức chương Nhiệt động học rất tốt.")
-            elif final_score_10 >= 5.0:
-                st.info("Khá tốt! Bạn hãy ôn luyện lại các câu sai để đạt điểm cao hơn.")
+            # Kiểm tra so khớp đáp án chính và đáp án thay thế (nếu có)
+            is_correct = (student_ans == correct_ans)
+            if "alt" in f:
+                for alt_ans in f["alt"]:
+                    if student_ans == alt_ans.lower():
+                        is_correct = True
+                        
+            if is_correct:
+                st.success(f"✅ Đúng rồi! Đáp án: **{f['ans']}**")
             else:
-                st.error("Bạn cần đọc lại tài liệu và cải thiện thêm kiến thức phần này nhé.")
+                st.error(f"❌ Chưa chính xác. Đáp án đúng là: **{f['ans']}**")
+        st.write("")
+
+# --- 3. BÁO CÁO TỔNG KẾT ---
+elif menu == "Báo cáo Tổng kết":
+    st.header("📊 Tổng kết Tiến độ Học tập")
+    
+    if st.session_state.user_info["name"]:
+        st.write(f"**Học viên:** {st.session_state.user_info['name']} | **MSSV:** {st.session_state.user_info['id']}")
+    
+    score_a = 0
+    done_a = 0
+    for i, q in enumerate(quiz_data):
+        idx = st.session_state.answers_a[i]
+        if idx is not None:
+            done_a += 1
+            if q["ops"][idx][0] == q["ans"]:
+                score_a += 1
+                
+    score_b = 0
+    done_b = 0
+    for i, f in enumerate(fill_data):
+        ans = st.session_state.answers_b[i].strip().lower()
+        if ans != "":
+            done_b += 1
+            is_ok = (ans == f["ans"].lower())
+            if "alt" in f:
+                for alt_ans in f["alt"]:
+                    if ans == alt_ans.lower():
+                        is_ok = True
+            if is_ok:
+                score_b += 1
+                
+    total_q = len(quiz_data) + len(fill_data)
+    total_score = ((score_a + score_b) / total_q) * 10
+    
+    c1, c2, c3 = st.columns(3)
+    c1.metric("Tiến độ làm bài", f"{done_a + done_b} / {total_q}")
+    c2.metric("Tổng số câu đúng", f"{score_a + score_b} câu")
+    c3.metric("Điểm quy đổi (Hệ 10)", f"{total_score:.2f}")
+    
+    st.progress((done_a + done_b) / total_q)
