@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Thiết lập cấu hình trang
-st.set_page_config(page_title="Ôn tập Nhiệt động học", page_icon="🌡️", layout="centered")
+st.set_page_config(page_title="CHƯƠNG 1", page_icon="🌡️", layout="centered")
 
 # --- DỮ LIỆU BỘ CÂU HỎI ---
 quiz_data = [
